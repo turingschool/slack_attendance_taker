@@ -18,21 +18,6 @@ function getTimestamp(slackLink) {
     return slackLink.split("/").at(-1).slice(1);
 }
 
-function handleResponse(response){
-    return response.json()
-    .then((json) => {
-      if (!response.ok) {
-        const error = {
-          status: response.status,
-          statusText: response.statusText,
-          json
-        }
-        return Promise.reject(error)
-      }
-      return json
-    })
-}
-
 function appendData(data) {
     var mainContainer = document.getElementById("myData");
     var div = document.createElement("div");
